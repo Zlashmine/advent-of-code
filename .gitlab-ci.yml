@@ -1,0 +1,34 @@
+image: oven/bun:slim
+
+stages:
+  - bun
+  - test
+
+bun:
+  stage: bun
+  script:
+    - cd bun && bun install
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    expire_in: 1 day
+    when: on_success
+    paths:
+      - node_modules/
+
+bun_test:
+  stage: test
+  dependencies:
+    - bun
+  script:
+    - cd bun && bun test --timeout 60000
+
+go_test:
+  stage: test
+  image: golang:1.23.3
+  script:
+    - cd go/ && go test ./...
+  cache:
+    paths:
+      - /go/pkg/mod

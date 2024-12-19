@@ -1,0 +1,14 @@
+namespace AdventOfCode.Solutions.Year2024.DayDAY;
+
+internal class Solution() : SolutionBase(DAY, 2024, "Title", new []{"0", "0"})
+{
+    protected override string SolvePartOne()
+    {
+        return "";
+    }
+
+    protected override string SolvePartTwo()
+    {
+        return "";
+    }
+}

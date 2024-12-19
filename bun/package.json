@@ -1,0 +1,21 @@
+{
+  "name": "advent-of-code-johan",
+  "author": {
+    "name": "Johan Lindberg"
+  },
+  "module": "app/main.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "chalk": "^5.3.0",
+    "dedent": "^1.5.1",
+    "prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "solve": "bun --watch ./app/runners/command-runner.ts",
+    "pretty": "prettier --write ."
+  },
+  "type": "module"
+}
