@@ -8,7 +8,7 @@ on:
 
 jobs:
   bun:
-    name: Bun Build and Test
+    name: Bun Test
     runs-on: ubuntu-latest
     container: oven/bun:slim
     steps:
@@ -47,7 +47,7 @@ jobs:
         run: go test ./...
   rust:
     runs-on: ubuntu-latest
-    name: Continuous Integration
+    name: Rust Test
     steps:
       - uses: actions/checkout@v4
       - name: Set up cargo cache
