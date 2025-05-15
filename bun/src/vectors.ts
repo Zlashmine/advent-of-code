@@ -67,6 +67,19 @@ export default class VectorUtils {
     return !VectorUtils.isOutOfBounds(vector, grid[0]!.length, grid.length)
   }
 
+  public static isEdge(
+    vector: Vector2,
+    width: number,
+    height: number
+  ): boolean {
+    return (
+      vector[0] === 0 ||
+      vector[1] === 0 ||
+      vector[0] === width - 1 ||
+      vector[1] === height - 1
+    )
+  }
+
   public static readonly DIRECTIONS: {
     up: Vector2
     down: Vector2

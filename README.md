@@ -2,5 +2,6 @@
 
 #### Javascript - Bun
 #### Go
+#### Rust
 #### .NET
 ___

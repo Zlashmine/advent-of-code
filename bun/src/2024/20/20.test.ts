@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'bun:test'
 import createTest from 'app/test'
 
-const puzzleInstance = await createTest(10)
+const puzzleInstance = await createTest(20)
 
-describe('Day 10', () => {
+describe('Day 20', () => {
   it('Part One', async () => {
     const result = await puzzleInstance.solveFirst()
 

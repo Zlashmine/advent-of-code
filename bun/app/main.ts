@@ -5,8 +5,12 @@ import { Context } from './type.ts'
 export async function runner(context: Context) {
   const name = `${context.day}`.padStart(2, '0')
 
-  const { default: input } = await import(`@/${context.year}/${name}/${context.file}.txt`)
-  const puzzle = await import(`@/${context.year}/${name}/${name}${context.specialName}.ts`)
+  const { default: input } = await import(
+    `@/${context.year}/${name}/${context.file}.txt`
+  )
+  const puzzle = await import(
+    `@/${context.year}/${name}/${name}${context.specialName}.ts`
+  )
 
   const puzzleInstance = new puzzle.default()
 

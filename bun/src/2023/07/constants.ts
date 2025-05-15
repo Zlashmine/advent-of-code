@@ -1,4 +1,4 @@
-import { IOutcome } from './types';
+import { IOutcome } from './types'
 
 export const CARDS_REGULAR: string[] = [
   'A',
@@ -13,8 +13,8 @@ export const CARDS_REGULAR: string[] = [
   '5',
   '4',
   '3',
-  '2',
-];
+  '2'
+]
 export const CARDS_JOKERS: string[] = [
   'A',
   'K',
@@ -28,49 +28,49 @@ export const CARDS_JOKERS: string[] = [
   '4',
   '3',
   '2',
-  'J',
-];
+  'J'
+]
 
 export const HANDS: IOutcome[] = [
   {
     outcome: '5',
     name: 'FIVE_OF_A_KIND',
-    power: 7,
+    power: 7
   },
   {
     outcome: '4,1',
     name: 'FOUR_OF_A_KIND',
-    power: 6,
+    power: 6
   },
   {
     outcome: '3,2',
     name: 'FULL_HOUSE',
-    power: 5,
+    power: 5
   },
   {
     outcome: '3,1,1',
     name: 'THREE_OF_A_KIND',
-    power: 4,
+    power: 4
   },
   {
     outcome: '2,2,1',
     name: 'TWO_PAIR',
-    power: 3,
+    power: 3
   },
   {
     outcome: '2,1,1,1',
     name: 'ONE_PAIR',
-    power: 2,
+    power: 2
   },
   {
     outcome: '1,1,1,1,1',
     name: 'HIGH_CARD',
-    power: 1,
-  },
-];
+    power: 1
+  }
+]
 
 export const NO_OUTCOME: IOutcome = {
   outcome: '?',
   name: 'UNKNOWN',
-  power: 0,
-};
+  power: 0
+}
