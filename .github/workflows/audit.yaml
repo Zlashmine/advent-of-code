@@ -2,13 +2,13 @@ name: Audit
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   bun:
-    name: Bun Build and Test
+    name: Bun Test
     runs-on: ubuntu-latest
     container: oven/bun:slim
     steps:
@@ -36,7 +36,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.23.3'
+          go-version: "1.23.3"
       - name: Cache Go Modules
         uses: actions/cache@v3
         with:
@@ -45,3 +45,29 @@ jobs:
       - name: Go Test
         working-directory: go
         run: go test ./...
+  rust:
+    runs-on: ubuntu-latest
+    name: Rust Test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up cargo cache
+        uses: actions/cache@v4
+        continue-on-error: false
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('rust/**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+      - name: cargo test
+        working-directory: rust
+        run: cargo test
+      - name: cargo clippy
+        working-directory: rust
+        run: cargo clippy -- -D warnings
+      - name: cargo fmt
+        working-directory: rust
+        run: cargo fmt --check

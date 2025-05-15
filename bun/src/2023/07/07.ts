@@ -110,7 +110,9 @@ export default class ConcretePuzzle extends Puzzle {
 
     const cardString = cards.join('')
     for (let charIndex = 0; charIndex < cards.length; charIndex++) {
-      const replacedCards = cardString.replace(/J/g, cards[charIndex]!).split('')
+      const replacedCards = cardString
+        .replace(/J/g, cards[charIndex]!)
+        .split('')
 
       outcomes.push(this.getOutcomeForHand(replacedCards))
     }
