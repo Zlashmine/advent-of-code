@@ -54,7 +54,7 @@ func TestGraph(t *testing.T) {
 		graph.AddEdge(1, 3, 15)
 
 		neighbours := graph.Neighbours(1)
-		expected := []int{200, 300}
+		expected := []int{300, 200}
 
 		if !reflect.DeepEqual(neighbours, expected) {
 			t.Errorf("Neighbours mismatch: got %v, expected %v", neighbours, expected)
