@@ -20,9 +20,9 @@ cargo scaffold 1 --download
 cargo download 1
 
 cargo solve 1
+# Benchmark
 cargo all
 
-# Benchmark
 cargo time 1 --store
 cargo time --all --store
 cargo test
