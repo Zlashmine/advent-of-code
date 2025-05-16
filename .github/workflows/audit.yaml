@@ -64,7 +64,7 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: cargo test
         working-directory: rust
-        run: cargo test
+        run: cd rust && cargo test
       - name: cargo clippy
         working-directory: rust
         run: cargo clippy -- -D warnings
