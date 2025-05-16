@@ -60,11 +60,11 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('rust/**/Cargo.lock') }}
+          key: ${{ runner.os }}-cargo-${{ hashFiles('rust/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
       - name: cargo test
         working-directory: rust
-        run: cd rust && cargo test
+        run: cargo test
       - name: cargo clippy
         working-directory: rust
         run: cargo clippy -- -D warnings
