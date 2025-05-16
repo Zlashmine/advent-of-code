@@ -7,9 +7,9 @@
 
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---:  |
-| [Day 1](./src/bin/01.rs) | `-` | `-` |
+| [Day 1](./src/bin/01.rs) | `48.1µs` | `75.1µs` |
 
-**Total: 0.00ms**
+**Total: 0.12ms**
 <!--- benchmarking table --->
 ## Usage
 ### ➡️ Scaffold a day
@@ -20,9 +20,9 @@ cargo scaffold 1 --download
 cargo download 1
 
 cargo solve 1
+# Benchmark
 cargo all
 
-# Benchmark
 cargo time 1 --store
 cargo time --all --store
 cargo test
