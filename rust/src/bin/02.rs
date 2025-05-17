@@ -12,28 +12,24 @@ pub fn part_one(input: &str) -> Option<u64> {
 }
 
 pub fn part_two(input: &str) -> Option<u64> {
-    let mut rows: Vec<Vec<i32>> = parse_input(input)
-        .iter()
-        .filter(|row| !is_row_safe(row))
-        .cloned()
-        .collect();
+    let mut rows: Vec<Vec<i32>> = parse_input(input).iter().cloned().collect();
 
     (0..rows.len()).for_each(|index| {
         let row = rows[index].clone();
 
         for i in 0..row.len() {
-            let new_row = remove_by_index(&row, i);
+            let let_new_row_without_index = remove_by_index(&row, i);
 
-            if is_row_safe(&new_row) {
-                rows[index] = new_row;
+            if is_row_safe(&let_new_row_without_index) {
+                rows[index] = let_new_row_without_index;
                 break;
             }
         }
     });
 
-    let safe_rows_count = rows.iter().filter(|row| is_row_safe(row)).count();
+    let safe_rows = rows.iter().filter(|row| is_row_safe(row));
 
-    Some(safe_rows_count as u64)
+    Some(safe_rows.into_iter().count() as u64)
 }
 
 fn is_row_safe(row: &[i32]) -> bool {
