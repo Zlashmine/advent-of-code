@@ -7,10 +7,11 @@
 
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---:  |
-| [Day 1](./src/bin/01.rs) | `48.1µs` | `75.1µs` |
-| [Day 2](./src/bin/02.rs) | `257.2µs` | `1.2ms` |
+| [Day 1](./src/bin/01.rs) | `51.0µs` | `78.4µs` |
+| [Day 2](./src/bin/02.rs) | `264.8µs` | `1.2ms` |
+| [Day 3](./src/bin/03.rs) | `210.6µs` | `316.7µs` |
 
-**Total: 1.58ms**
+**Total: 2.12ms**
 <!--- benchmarking table --->
 ## Usage
 ### ➡️ Scaffold a day
